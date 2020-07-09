@@ -13,8 +13,8 @@ from io import BytesIO
 # from pymongo import MongoClient
 
 app = Flask(__name__)
-# app.config["MONGO_URI"] = os.environ.get("MONGODB_URI")
-app.config["MONGO_URI"] = "mongodb://localhost:27017/final"
+app.config["MONGO_URI"] = os.environ.get("MONGODB_URI")
+# app.config["MONGO_URI"] = "mongodb://localhost:27017/final"
 app.config['MONGO_DBNAME'] = 'final'
 app.config['JWT_SECRET_KEY'] = 'secret'
 app.config['SECRET_KEY'] ='super-secret'
