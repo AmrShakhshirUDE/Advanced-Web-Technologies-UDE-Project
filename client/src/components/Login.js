@@ -113,7 +113,7 @@ class Login extends Component {
                                     value={this.state.password}
                                     onChange={this.onChange} />
                             </div>
-                            <div className="text-danger mt-2"> {this.state.result}</div>
+                            <div className=" my-2" style={{color:'#E67E22'}}> {this.state.result}</div>
                             <button type="submit" className="btn btn-lg btn-primary btn-block">
                                 Log In
                             </button>
