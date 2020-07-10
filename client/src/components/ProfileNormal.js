@@ -59,7 +59,6 @@ export default class ProfileNormal extends Component{
         const newFile =e.target.files[0]
         this.setState({
             file:newFile,
-        // },(e)=>this.imageUpload(e));
         },(e)=>this.getImage(this.state.file.name));
     }
 
