@@ -29,12 +29,6 @@ export default class ProfileNormal extends Component{
     
 
     componentDidMount () {
-        // this.logOut()
-        // const user = {
-        //     email: this.state.email,
-        //     password: this.state.password
-        // }
-        // this.login(user)
         const token = localStorage.usertoken
         const decoded = jwt_decode(token)
         this.setState({
@@ -45,40 +39,10 @@ export default class ProfileNormal extends Component{
         
     }
 
-    // logOut (e) {     
-    //     e.preventDefault()
-    //     localStorage.removeItem('usertoken')
-    //     this.props.history.push(`/login`)
-    // }
-    
-
-
-    // login = user => {
-    //     if (this.state.mounted){
-    //         this.logOut()
-    //     }
-    //     return axios
-    //         .post("users/login", {
-    //             email: user.email,
-    //             password: user.password
-    //         })
-    //         .then(response => {
-    //             this.setState({
-    //                 "result":response.data.msg
-    //             })
-    //             localStorage.setItem('usertoken', response.data.token)
-    //             return response.data.token
-                
-    //         })
-    //         .catch(err => {
-    //             console.log(err)
-    //         })
-    // }
-
 
 
     getImage(file){
-        if(this.state.file!=='images/Propic1.png'){
+        if(this.state.file!=='images/userProfile.png'){
             this.setState({
                 image: this.state.serverUrl +'file/'+ file
             })
@@ -138,16 +102,7 @@ export default class ProfileNormal extends Component{
                 </div>  
                 
 
-                <div className="" style={{"display":"flex", "justifyContent": "center", "alignItems": "center"}}>
-                    {/* <label>Chane Image</label><br/> */}
-                    <input className="my-2 btn btn-secondary btn-xs" 
-                    type="file" name="file"
-                    accept="image/png, image/jpeg" onChange={(e)=>this.handleFile(e)}/>
-                    {/* Change Image</button> */}
-                </div>
-                <div  style={{"display":"flex", "justifyContent": "center", "alignItems": "center"}}>
-                    <button className="btn btn-primary mt-2" onClick={(e)=>this.imageUpload(e,this.state.file)}>update Image</button>                        
-                </div>
+                
 
                 {/* <button onClick={()=>this.fileInput.click()}>Choose pictures</button><br/> */}
                <br></br>
