@@ -278,7 +278,12 @@ export default  class AllPosts extends Component {
                       {posts.file}
                     </p>
                   </div>
-                    <Button className="mx-2" outline color="info" size="sm" onClick={()=>this.toggleModal1(posts)}>Update file</Button>
+                  <br></br>
+                  <div className="col-sm-12" style={{"display":"flex", "justifyContent": "center", "alignItems": "center"}}>
+                    <Button className="mx-2" outline color="info" size="sm"
+                     style={{"display":"flex", "justifyContent": "center", "alignItems": "center"}}
+                     onClick={()=>this.toggleModal1(posts)}>Update file</Button>
+                  </div>
             
                 </div>
               
