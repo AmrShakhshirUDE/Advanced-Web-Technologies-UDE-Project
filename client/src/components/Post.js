@@ -3,7 +3,8 @@ import {  Input } from 'reactstrap';
 import Footer from './Footer';
 import axios from 'axios'
 import jwt_decode from 'jwt-decode';
-import { UrlContext } from '../contexts/urlContext';
+
+
 
 
 export default class Post extends Component {
@@ -14,8 +15,7 @@ export default class Post extends Component {
             title: '',
             content: '',
             category:'',
-            file:'null',
-            'serverUrl': UrlContext._currentValue,
+            file:'null'
         }
 
         this.onChange = this.onChange.bind(this)
@@ -42,7 +42,7 @@ export default class Post extends Component {
 
     }
     getAllPost = () => {
-        axios.get(this.state.serverUrl +'users/posts')
+        axios.get('http://localhost:3000/users/posts')
         .then((response) => {
           const data = response.data;
           this.setState({posts:data})
@@ -70,7 +70,7 @@ export default class Post extends Component {
         formdata.append('email',email)
 
    axios({
-            url: this.state.serverUrl +'users/post',
+            url: 'http://localhost:3000/users/post',
             method: 'POST',
             headers:{
                 authorization:'usertoken'
@@ -103,11 +103,19 @@ export default class Post extends Component {
         return (
             <React.Fragment>
 
-            <div className="container">
-            <div className="row jumbotron mt-5">
-                <div className="col-md-8 mt-5 mx-auto">
+            <div className="container-fluid">
+
+
+
+                {/* <div className="row mt-5 jumbotron "> */}
+                <div className="row w-100 ">
+                    <div className="col-md-7 px-0">
+                    <img src={'images/newpost.jpg'} style={{width:'100%'}} alt="newpost" />
+
+                    </div>
+                    <div className="col-md-5 my-3  px-5 " >
                     <form noValidate onSubmit={this.onSubmit}>
-                        <h1 className="h3 mb-3 font-weight-normal">New Post</h1>
+                    <h4 className=" my-4 font-weight-normal" style={{color: '#5c7d92', paddingLeft:'40%'}}>New Post</h4>
                         <div className="form-group">
                             <label htmlFor="title">Title</label>
                             <input type="title"
@@ -137,11 +145,11 @@ export default class Post extends Component {
                         </div>
                         
                       <div className="">
-                          <label> Select File</label>
+                          <label style={{color: '#5c7d92', marginRight:'2%'}}> Select File</label>
                           <input className="mb-2 "type="file" name="file" onChange={(e)=>this.handleFile(e)} />
                           </div>
                         
-                        <p className="text-info">
+                        <p style={{color: '#E67E22'}} >
                             Supported Formats: JPG-PNG-PDF-Zip
                         </p>
 
