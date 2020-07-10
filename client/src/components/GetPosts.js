@@ -305,7 +305,7 @@ plusLike = (e) => {
         return (
           <React.Fragment>
 
-          <Container  onClick={e=>{this.setState({ displaymsg : ''})}}>
+            <Container  onClick={e=>{this.setState({ displaylikemsg : '',displaydislikemsg : ''})}}>
              <Row className="mt-5 float-right ">
                <div class="card" style={{"width": "18rem"}}>
                  <img class="card-img-top" src={'images/sidebar.jpg'} alt="Card image cap" />
