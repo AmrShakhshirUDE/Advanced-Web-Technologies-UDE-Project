@@ -327,8 +327,17 @@ def imageUpload():
         file = request.files['file']
         mongo.save_file(file.filename,file)
         update_user= mongo.db.users.update_one({'email':email},{'$set':{'file':file.filename}})
+
+        login_user = users.find_one({'email':email})
+        access_token = create_access_token(identity = {
+            'username':login_user['username'],
+            'email':login_user['email'],
+            'file':login_user['file'],
+            })
+        result = jsonify({'token':access_token})
+
         resp = jsonify({'msg':'you have added new profile image!'})
-        return resp
+        return result
 
 @app.route('/')  #check connectivity
 def connected():
