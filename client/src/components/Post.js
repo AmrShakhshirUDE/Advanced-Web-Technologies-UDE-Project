@@ -3,6 +3,7 @@ import {  Input } from 'reactstrap';
 import Footer from './Footer';
 import axios from 'axios'
 import jwt_decode from 'jwt-decode';
+import { UrlContext } from '../contexts/urlContext';
 
 
 
@@ -15,7 +16,8 @@ export default class Post extends Component {
             title: '',
             content: '',
             category:'',
-            file:'null'
+            file:'null',
+            'serverUrl': UrlContext._currentValue,
         }
 
         this.onChange = this.onChange.bind(this)
@@ -42,7 +44,7 @@ export default class Post extends Component {
 
     }
     getAllPost = () => {
-        axios.get('http://localhost:3000/users/posts')
+        axios.get(this.state.serverUrl +'users/posts')
         .then((response) => {
           const data = response.data;
           this.setState({posts:data})
@@ -70,7 +72,7 @@ export default class Post extends Component {
         formdata.append('email',email)
 
    axios({
-            url: 'http://localhost:3000/users/post',
+            url: this.state.serverUrl +'users/post',
             method: 'POST',
             headers:{
                 authorization:'usertoken'
