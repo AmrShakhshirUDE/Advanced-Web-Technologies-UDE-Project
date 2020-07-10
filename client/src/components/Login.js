@@ -115,7 +115,7 @@ class Login extends Component {
                             </div>
                             <div className="text-danger mt-2"> {this.state.result}</div>
                             <button type="submit" className="btn btn-lg btn-primary btn-block">
-                                Sign in
+                                Log In
                             </button>
                             <div className="pt-2" >
                                 <p style={{color:'grey', fontSize:'13px' , paddingLeft:'15%'}}>Do not have an account?  <Link to="/register" style={{"fontWeight": "bold",color: '#5c7d92'}}>Register now</Link></p>
