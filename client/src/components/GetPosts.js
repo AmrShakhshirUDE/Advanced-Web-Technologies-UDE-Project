@@ -28,7 +28,7 @@ export default class GetPosts extends Component {
          //'title':'',
          //'content':'',
          //'category':'',
-         'image':'images/Propic1.png',
+         'image':'',
         // 'file':'',
          //'created':'',
           files:'',
@@ -51,6 +51,12 @@ export default class GetPosts extends Component {
       this.getComments = this.getComments.bind(this)
   }
  
+  componentDidMount = ()=>{
+  
+    console.log(this.state.files)
+    this.getAllPost();
+    this.getComments()
+  }
 
   onChange (e) {
     this.setState({ [e.target.name]: e.target.value })
@@ -104,12 +110,6 @@ plusLike = (e) => {
       });
   } 
     
-        componentDidMount = ()=>{
-       
-          console.log(this.state.files)
-          this.getAllPost();
-          this.getComments()
-        }
       
     
      
@@ -190,6 +190,15 @@ plusLike = (e) => {
       }
 
 
+      getImage(file){
+        let img =file
+        if(file!=='images/userProfile.png'){
+            img= this.state.serverUrl +'file/'+ file
+          }
+          return img
+    }
+
+
 
 
 
@@ -205,7 +214,9 @@ plusLike = (e) => {
               
                 <div className="row">
                   <div className="col-sm-3 mt-0">
-                    <img src={this.state.image} style={{"width": "80px","height":"auto","margin-top":"-10px"}}/>
+                    <img src={this.getImage(posts.userImage)} 
+                    style={{"width": "125%","height":"auto","margin-top":"-10px",
+                    "borderRadius": "10%", "border":'solid 1px lightgrey'}}/>
                   </div>
 
                   <div className="col-sm-7 d-flex">

@@ -181,7 +181,10 @@ def post():
         mongo.save_file(file.filename,file)
 
       
-        post = posts.insert({"title":title,"content":content,"category":category,'file':file.filename,'user_id':the_user['_id'],'username':the_user['username'],'date':date,'like':[], 'dislike':[] , 'comments':[]})
+        post = posts.insert({"title":title,"content":content,"category":category,
+        'file':file.filename,'user_id':the_user['_id'],'username':the_user['username'],
+        'userImage':the_user['file'],
+        'date':date,'like':[], 'dislike':[] , 'comments':[]})
         resp = jsonify({'msg':'you have added new post!'})
         return resp
 
@@ -355,6 +358,13 @@ def imageUpload():
         file = request.files['file']
         mongo.save_file(file.filename,file)
         update_user= mongo.db.users.update_one({'email':email},{'$set':{'file':file.filename}})
+
+        # update posts img
+        the_user = users.find_one({"email":email})
+        user_id=the_user['_id']
+        userImg = the_user['file']
+        update_postsUserImg=mongo.db.posts.update_many({'user_id': user_id},{'$set':{'userImage':userImg}})
+        # end of update posts img
 
         login_user = users.find_one({'email':email})
         access_token = create_access_token(identity = {
