@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
-import Footer from './Footer'
-import axios from 'axios'
+import React, { Component } from 'react';
+import Footer from './Footer';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { UrlContext } from '../contexts/urlContext';
 
 
@@ -62,13 +63,21 @@ class Register extends Component {
         return (
             <React.Fragment>
 
-            <div className="container">
-                <div className="row mt-5 jumbotron ">
-                    <div className="col-md-6 mt-5 mx-auto">
-                        <form noValidate onSubmit={this.onSubmit}>
-                            <h1 className="h3 mb-3 font-weight-normal">Register</h1>
+            <div className="container-fluid">
+
+
+
+                {/* <div className="row mt-5 jumbotron "> */}
+                <div className="row w-100 ">
+                    <div className="col-md-8 px-0">
+                    <img src={'images/registerimage.jpg'} style={{width:'100%'}} alt="registerimg" />
+
+                    </div>
+                    <div className="col-md-4  w-100  mx-auto " >
+                        <form noValidate onSubmit={this.onSubmit} className=" align-items-center py-5 px-5">
+                            <h4 className=" my-4 font-weight-normal" style={{color: '#5c7d92', paddingLeft:'40%'}}>Register</h4>
                             <div className="form-group">
-                                <label htmlFor="username">Username</label>
+                                {/* <label htmlFor="username">Username</label> */}
                                 <input type="text"
                                     className="form-control"
                                     name="username"
@@ -78,7 +87,7 @@ class Register extends Component {
                             </div>
                            
                             <div className="form-group">
-                                <label htmlFor="email">Email Address</label>
+                                {/* <label htmlFor="email">Email Address</label> */}
                                 <input type="email"
                                     className="form-control"
                                     name="email"
@@ -87,7 +96,7 @@ class Register extends Component {
                                     onChange={this.onChange} />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="password">Password </label>
+                                {/* <label htmlFor="password">Password </label> */}
                                 <input type="password"
                                     className="form-control"
                                     name="password"
@@ -95,15 +104,29 @@ class Register extends Component {
                                     value={this.state.password}
                                     onChange={this.onChange} />
                             </div>
+                            <div className="text-danger mt-2"> {this.state.result}</div>
 
                             <button type="submit" className="btn btn-lg  btn-primary btn-block">
                                 Register
                             </button>
-                            <div className="text-danger mt-2"> {this.state.result}</div>
+                            <div className="pt-2" >
+                                <p style={{color:'grey', fontSize:'13px' , paddingLeft:'20%'}}>already have an account?  <Link to="/login" style={{"fontWeight": "bold",color: '#5c7d92'}}>Log In</Link></p>
+                            </div>
                         </form>
                     </div>
+
+
+
                 </div>
+
+
+
+
             </div>
+
+
+
+
              <div className='container-fluid mt-5'> 
              <Footer />
              </div>
