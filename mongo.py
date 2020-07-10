@@ -49,7 +49,7 @@ def register():
             'username':username,
             'email':email,
             'password':password,
-            'file':'images/Propic1.png',
+            'file':'images/userProfile.png',
             'created':created
         })
         resp=jsonify({"msg":'registered successfully!', "success":"true"})
