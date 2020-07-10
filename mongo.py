@@ -100,13 +100,41 @@ def profile():
 def update():
     if request.method == 'POST':
         users = mongo.db.users
-   # the_user = users.find_one({"email":request.form['email']})
-   # _id = id
+        # _id = id
         email = request.json['email']
+        the_user = users.find_one({"email":email})
         username = request.json['username']
         password = bcrypt.generate_password_hash(request.json['password']).decode('utf-8')
         confirmpassword = request.json['confirmpassword']
         if request.json['password'] == confirmpassword:
+            user_id=the_user['_id']
+            update_postsUsername=mongo.db.posts.update_many({'user_id': user_id},{'$set':{'username':username}})
+
+            update_comment= mongo.db.posts.update_many ({'comments.0.user_id':user_id},{'$set':{"comments.0.username":username}})
+            update_comment= mongo.db.posts.update_many ({'comments.1.user_id':user_id},{'$set':{"comments.1.username":username}})
+            update_comment= mongo.db.posts.update_many ({'comments.2.user_id':user_id},{'$set':{"comments.2.username":username}})
+            update_comment= mongo.db.posts.update_many ({'comments.3.user_id':user_id},{'$set':{"comments.3.username":username}})
+            update_comment= mongo.db.posts.update_many ({'comments.4.user_id':user_id},{'$set':{"comments.4.username":username}})
+            update_comment= mongo.db.posts.update_many ({'comments.5.user_id':user_id},{'$set':{"comments.5.username":username}})
+            update_comment= mongo.db.posts.update_many ({'comments.6.user_id':user_id},{'$set':{"comments.6.username":username}})
+            update_comment= mongo.db.posts.update_many ({'comments.7.user_id':user_id},{'$set':{"comments.7.username":username}})
+            update_comment= mongo.db.posts.update_many ({'comments.8.user_id':user_id},{'$set':{"comments.8.username":username}})
+            update_comment= mongo.db.posts.update_many ({'comments.9.user_id':user_id},{'$set':{"comments.9.username":username}})
+            update_comment= mongo.db.posts.update_many ({'comments.10.user_id':user_id},{'$set':{"comments.10.username":username}})
+            # work on here later instead of code above how to use loop
+            # allposts = mongo.db.posts.find()
+
+            # allposts = dumps(allposts)
+
+            # i = 0
+            # j = 0
+
+            # while i < len(allposts):
+            #         while j < len(allposts[i][comments]):
+            #             update_comment= mongo.db.posts.update_many({'comments.'j'.user_id':user_id},{'$set':{"comments."j".username":username}})
+            #         j += 1
+            #     i += 1
+
         #mongo.db.users.update_one({'_id':ObjectId(_id['$oid']) if '$oid' in _id else ObjectId(_id)},{'$set':{'username':username,'password':password}})
             update_user= mongo.db.users.update_one({'email':email},{'$set':{'username':username,'password':password}})
             resp=jsonify({'msg':'updated successfully!!', 'success':'true'})
