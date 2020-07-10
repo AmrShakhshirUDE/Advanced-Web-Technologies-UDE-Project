@@ -34,10 +34,13 @@ export default  class AllPosts extends Component {
          modalIsOpen:false,
          'serverUrl': UrlContext._currentValue,
          id:null,
-         Open:false
+         Open:false,
+         deleteBoxModalOpen:false,
 
     }
-    this.updatePost = this.updatePost.bind(this)
+    // this.updatePost = this.updatePost.bind(this)
+    // this.deletePost = this.deletePost.bind(this);
+
     
 }
 
@@ -88,6 +91,12 @@ export default  class AllPosts extends Component {
       file: posts.file
     })
     }
+    toggledeleteModal(posts){
+      this.setState({
+        deleteBoxModalOpen:!this.state.deleteBoxModalOpen,
+        id: posts._id,
+    })
+    }
     handleFile = (e) => {
       let file =e.target.files[0]
       this.setState({file:file})
@@ -109,7 +118,12 @@ export default  class AllPosts extends Component {
               
         }).then(response => {
             this.getMyPost()
-             window.location='/mypost'
+            this.setState({        
+              'msg': 'file updated',
+              'Open': false
+            })
+            
+            //  window.location='/mypost'
 
         })
 }
@@ -139,15 +153,21 @@ export default  class AllPosts extends Component {
         data: formdata
       }).then((response) => {
     
-        console.log("updated new post!")
+        // console.log("updated new post!")
 
       this.getMyPost()
+
+      this.setState({        
+
+        'modalIsOpen': false
+      })
       //window.location = '/mypost';
 
      });  
     }
     
     deletePost = (e) => {
+
       axios({
         url: this.state.serverUrl +'deletepost', 
         method: 'DELETE',
@@ -155,10 +175,16 @@ export default  class AllPosts extends Component {
           "id": e.$oid
         } 
       }).then((response) => {
-        this.setState({        
-          'msg': response.data.msg
-      })
+
+        console.log("updated new post!")
+
       this.getMyPost()
+
+      this.setState({        
+        'msg': response.data.msg,
+        'deleteBoxModalOpen': false
+      })
+        // window.location = '/mypost';
       });        
     } 
 
@@ -210,7 +236,9 @@ export default  class AllPosts extends Component {
          
 
         <Button className="mx-2" outline color="info" size="sm" onClick={()=>this.toggleModal(posts)}>Update</Button>
-        <Button outline color="danger" size="sm" onClick={()=>this.deletePost(posts._id)} >Delete Post</Button>
+        {/* <Button outline color="danger" size="sm" onClick={()=>this.deletePost(posts._id)} >Delete Post</Button> */}
+        <Button outline color="danger" size="sm" onClick={()=>this.toggledeleteModal(posts)} >Delete Post</Button>
+
                 </div>
                 
               </div>
@@ -375,6 +403,27 @@ export default  class AllPosts extends Component {
                             Update
                         </button>
                         <button type="submit" onClick={this.toggleModal1.bind(this)} className="btn btn-lg btn-dark btn-block">
+                            Cancel
+                        </button>
+                    </ModalBody>
+                    </Modal>
+
+
+                    <Modal isOpen={this.state.deleteBoxModalOpen} id={this.state.id} >
+                      <ModalHeader toggle={this.toggledeleteModal.bind(this)}>
+                        Delete the Post
+                      </ModalHeader>
+                      <ModalBody>
+                      
+               
+                        <div className="my-3">
+                          <label>Do u really want to delete your Post?</label>
+                        </div>    
+
+                        <button type="submit" onClick={(e)=>{this.deletePost(this.state.id)}}className="btn btn-lg btn-dark btn-block">
+                            Delete
+                        </button>
+                        <button type="submit" onClick={this.toggledeleteModal.bind(this)} className="btn btn-lg btn-primary  btn-block">
                             Cancel
                         </button>
                     </ModalBody>
