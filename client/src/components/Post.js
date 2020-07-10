@@ -130,7 +130,7 @@ export default class Post extends Component {
                         <div className="form-group">
                             <label htmlFor="category">Category</label>
                             <Input type="select" name="category" id="category" onChange={e=>{this.setState({category:e.target.value})}}>
-                            <option value="Advance Web Technology"></option>
+                            <option value="" disabled selected>Choose Category</option>
                             <option value="Peer to Peer">Peer to Peer</option>
                             <option value="Advance Web Technology">Advance Web Technology</option>
                             <option value="Internet of Things">Internet of Things</option>
@@ -141,14 +141,16 @@ export default class Post extends Component {
                             <input type="content"
                                 className="form-control" style={{height:"120px"}}
                                 name="content"
-                                placeholder="Content.."
+                                placeholder="Extra Explaination..."
                                 value={this.state.content}
                                 onChange={this.onChange} />
                         </div>
                         
                       <div className="">
                           <label style={{color: '#5c7d92', marginRight:'2%'}}> Select File</label>
-                          <input className="mb-2 "type="file" name="file" onChange={(e)=>this.handleFile(e)} />
+                          <input className="mb-2 "type="file" name="file"
+                          accept="image/png, image/jpeg, .zip,.rar,.7zip, .pdf"
+                          onChange={(e)=>this.handleFile(e)} />
                           </div>
                         
                         <p style={{color: '#E67E22'}} >
