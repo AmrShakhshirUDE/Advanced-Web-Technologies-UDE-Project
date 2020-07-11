@@ -275,15 +275,13 @@ export default  class AllPosts extends Component {
                   </div>
                   <div className="col-sm-3">
                     <p className="text-nowrap" style={{"width": "6rem"}}>
-                      {posts.file}
-                    </p>
-                  </div>
-                  <br></br>
-                  <div className="col-sm-12" style={{"display":"flex", "justifyContent": "center", "alignItems": "center"}}>
-                    <Button className="mx-2" outline color="info" size="sm"
-                     style={{"display":"flex", "justifyContent": "center", "alignItems": "center"}}
+                      {posts.file}<br/>
+                      <Button className="mt-2" outline color="info" size="sm"
                      onClick={()=>this.toggleModal1(posts)}>Update file</Button>
+                    </p>
+                   
                   </div>
+                 
             
                 </div>
               
