@@ -41,9 +41,7 @@ export default class GetPosts extends Component {
           'displaydislikemsg':'',
           'displaylikemsg':'',
           'likedPostId':'',          
-          'dislikedPostId':''
-
-      
+          'dislikedPostId':'',    
       }
       this.getFile=this.getFile.bind(this)
       this.addComment = this.addComment.bind(this)
@@ -148,7 +146,10 @@ plusLike = (e) => {
             }
         }).then(response => {
           const data = response.data;
-          this.setState({comments:data})
+          this.setState({
+            comments:data,
+            // 'comment':'',
+        })
             console.log("get all comments")
         })
       }
@@ -171,7 +172,6 @@ plusLike = (e) => {
         getFile(e) {
           const fName =e.file
           const urlFile =this.state.serverUrl +'file/'+fName
-          console.log(urlFile)
           axios({
             url: urlFile, //your url
             method: 'Get',
@@ -215,8 +215,8 @@ plusLike = (e) => {
                 <div className="row">
                   <div className="col-sm-3 mt-0">
                     <img src={this.getImage(posts.userImage)} 
-                    style={{"width": "125%","height":"auto","margin-top":"-10px",
-                    "borderRadius": "10%", "border":'solid 1px lightgrey'}}/>
+                    style={{"width": "110px","height":"110px","margin-top":"-10px",
+                    "borderRadius": "50%", "border":'solid 1px lightgrey'}}/>
                   </div>
 
                   <div className="col-sm-7 d-flex">
@@ -294,9 +294,15 @@ plusLike = (e) => {
                   <div className="row col-sm-12 py-2 mx-0" >
                     <Form inline>
                       <FormGroup>
-                        <Input type="textarea" name="text" id={posts._id} placeholder='new comment' onChange={e=>{this.setState({comment:e.target.value, displaymsg : ''})}}/>
+                        <Input type="textarea" name="text" id={posts._id} placeholder='new comment' 
+                        onChange={e=>{this.setState({comment:e.target.value, displaymsg : ''})}}/>
                       </FormGroup>
-                      <Button className="ml-3 btn-primary"   onClick={()=>this.addComment(posts._id)}   size="sm">send</Button>
+                      <Button className="ml-3 btn-primary"
+                      onClick={()=>{
+                      this.addComment(posts._id);
+                      // this.setState({comment:''})
+                      }}
+                      size="sm">send</Button>
                     </Form>
                   </div>
                   

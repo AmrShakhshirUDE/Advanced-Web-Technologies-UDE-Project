@@ -27,7 +27,7 @@ export default  class AllPosts extends Component {
         'content':'',
         'category':'',
         'image':'images/Propic1.png',
-        'file':'',
+        files:'',
          posts:[],
          'msg':'',
          'show':true,
@@ -189,12 +189,8 @@ export default  class AllPosts extends Component {
     } 
 
     getFile(e) {
-      console.log(e)
-      console.log('hallo download')
-      console.log(e.file)
       const fName =e.file
       const urlFile =this.state.serverUrl +'file/'+fName
-      console.log(urlFile)
       axios({
         url: urlFile, //your url
         method: 'Get',
@@ -212,7 +208,14 @@ export default  class AllPosts extends Component {
       });
   }
 
-   
+
+  getImage(file){
+    let img =file
+    if(file!=='images/userProfile.png'){
+        img= this.state.serverUrl +'file/'+ file
+      }
+      return img
+}
 
 
     displayMyPost = (posts) =>{
@@ -226,9 +229,11 @@ export default  class AllPosts extends Component {
                 <Col md={{ span: 3, offset: 2 }}   sm="12">
               <div className=" jumbotron mt-5" style={{"width":"70%","backgroundColor":"white"}}>
               <div className="row">
-                <div className="col-sm-3">
-                  <img src={this.state.image} style={{"width": "80px","height":"auto"}}/>
-                </div>
+              <div className="col-sm-3 mt-0">
+                    <img src={this.getImage(posts.userImage)} 
+                    style={{"width": "110px","height":"110px","margin-top":"-10px",
+                    "borderRadius": "50%", "border":'solid 1px lightgrey'}}/>
+                  </div>
     
                 <div className="col-sm-8">
           <a className="mt-2 ml-2" href="/profile" style={{color:'#5c7d92'}}>{posts.username}</a>
