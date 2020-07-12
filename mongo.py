@@ -10,7 +10,6 @@ from flask_jwt_extended import JWTManager
 from flask_jwt_extended import create_access_token
 from werkzeug.utils import secure_filename
 from io import BytesIO
-# from pymongo import MongoClient
 
 app = Flask(__name__)
 app.config["MONGO_URI"] = os.environ.get("MONGODB_URI")
@@ -209,9 +208,6 @@ def get_post():
     posts = mongo.db.posts
     user_post = posts.find({'user_id':the_user['_id']})
     post_list =''
-    #for e in user_post:
-    #    post_list += e['title'] +'---'+e['content']+'--'+e['category']+'--'+e['file']+'--'
-    #return post_list
     resp = dumps(user_post)
     return resp
 
@@ -232,8 +228,7 @@ def updatePost():
         content = request.form['content']
         category = request.form['category']
         id = ObjectId(request.form['id'])
-        #file = request.files['file']
-        #mongo.save_file(file.filename,file)
+       
 
         posts.update_one({ '_id': id}, { '$set' :{'title':title,'content':content,'category':category}})
         resp = jsonify('you have updated the post!')
@@ -259,11 +254,6 @@ def add_comment():
 
         posts = mongo.db.posts
         id = ObjectId(request.json['id'])
-        #the_post = posts.find_one({"_id":id })
-        #comments = mongo.db.comments
-        #comment = request.json['comment']
-        #posts = posts.insert({"comment":comment,"user_id":the_user['_id'],'username':the_user['username'],"post_id":the_post['_id'],'date':date})
-       # posts = posts.update({"_id":id},{$push:["comment":request.json['comment'],"user_id":the_user['_id'],'username':the_user['username'],'date':date])
 
         posts.update({ '_id': id}, { '$push': {'comments':{   '$each': [ { "comment":request.json['comment'],"username":the_user['username'],"user_id":the_user['_id'],'date':date } ] }}} )
         resp = jsonify({'msg':'you have added new comment!'})
