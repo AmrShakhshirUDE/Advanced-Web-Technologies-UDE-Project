@@ -12,7 +12,7 @@ export default class Footer extends Component {
                 <div className="card-body"  >
                 <div className='box d-md-flex'>
                     <img src={logo} alt="Logo" title="Home" style={{height: "120px",with: "120px"}}/>                  
-            <div className='text mx-auto' >
+            <div className='text  ml-4 ' >
                     <h5 className="card-title">Visit Us</h5>
                     <p> Want to know more about us?</p>
                     <a href='https://baohuideng.github.io/BaohuiWebsite/index/index.html' className='text-muted' className="btn btn-sm btn-primary my-1"  >Baohui Deng</a> <br/>
