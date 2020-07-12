@@ -10,6 +10,7 @@ import Footer from './Footer'
 import moment from 'moment';
 import 'moment-timezone';
 import { UrlContext } from '../contexts/urlContext';
+// import Background from '../assets/images/sky1.jpg'
 
 
 
@@ -41,8 +42,10 @@ export default class GetPosts extends Component {
           'displaydislikemsg':'',
           'displaylikemsg':'',
           'likedPostId':'',          
-          'dislikedPostId':'',    
+          'dislikedPostId':'',
       }
+
+
       this.getFile=this.getFile.bind(this)
       this.addComment = this.addComment.bind(this)
       this.onChange = this.onChange.bind(this)
@@ -50,7 +53,7 @@ export default class GetPosts extends Component {
   }
  
   componentDidMount = ()=>{
-  
+    // document.body.style.backgroundImage=`url(${Background})`
     console.log(this.state.files)
     this.getAllPost();
     this.getComments()
@@ -207,10 +210,13 @@ plusLike = (e) => {
 
         if(!posts.length) return <div className='jumbotron mx-auto mt-3' style={{"width":"70%"}}> <h4 className='text-center'>There is currently no posts yet</h4> </div>
 
-        return posts.map((posts) => (
+        return posts.map((posts,index) => (
           <Col md={{ span: 3, offset: 1 }}   sm="12">
              
-             <div className="jumbotron mt-5 mx-5 " style={{"width":"70%","backgroundColor":"white"}}  >
+             <div className="jumbotron mt-5 mx-5 " 
+             style={index%2?
+             {"width":"70%","backgroundColor":"white","outlineStyle": "solid","outlineColor":"#FFD700","backgroundColor":"#f0f8f8"}:
+             {"width":"70%","backgroundColor":"white","outlineStyle": "solid","outlineColor":"#DC143C","backgroundColor":"#f0f8f0"}}  >
               
                 <div className="row">
                   <div className="col-sm-3 mt-0">
@@ -320,9 +326,9 @@ plusLike = (e) => {
 
 
         return (
-          <React.Fragment>
+          <React.Fragment >
 
-            <Container  onClick={e=>{this.setState({ displaylikemsg : '',displaydislikemsg : ''})}}>
+            <Container onClick={e=>{this.setState({ displaylikemsg : '',displaydislikemsg : ''})}}>
              <Row className="mt-5 float-right ">
                <div class="card" style={{"width": "18rem"}}>
                  <img class="card-img-top" src={'images/sidebar.jpg'} alt="Card image cap" />
