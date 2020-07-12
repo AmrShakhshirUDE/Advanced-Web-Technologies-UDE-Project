@@ -71,10 +71,7 @@ def login():
             'email':login_user['email'],
             'file':login_user['file'],
             })
-            #session['email'] = login_user['email']
-            #session['username'] = login_user['username']
             result = jsonify({'token':access_token})
-            #result = jsonify({'session':session['email']+'--'+session['username']})
 
         else:
             result = jsonify({"msg":'Invalid username and password'})
@@ -134,7 +131,6 @@ def update():
             #         j += 1
             #     i += 1
 
-        #mongo.db.users.update_one({'_id':ObjectId(_id['$oid']) if '$oid' in _id else ObjectId(_id)},{'$set':{'username':username,'password':password}})
             update_user= mongo.db.users.update_one({'email':email},{'$set':{'username':username,'password':password}})
             resp=jsonify({'msg':'updated successfully!!', 'success':'true'})
             return resp
@@ -166,7 +162,6 @@ def post():
     if request.method == 'POST':
         users = mongo.db.users
         the_user = users.find_one({"email":request.form['email']})
-        #login_user = users.filter(email=create_access_token['email']).first()
         date = datetime.utcnow()
 
         posts = mongo.db.posts
@@ -269,10 +264,6 @@ def get_comments():
 
         comments = mongo.db.comments
         post_comment = comments.find({'post_id':the_post['_id']})
-        #post_list =''
-        #for e in user_post:
-        #    post_list += e['title'] +'---'+e['content']+'--'+e['category']+'--'+e['file']+'--'
-        #return post_list
         resp = dumps(post_comment)
         return resp
 
