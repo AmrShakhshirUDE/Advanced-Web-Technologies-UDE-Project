@@ -38,8 +38,7 @@ export default  class AllPosts extends Component {
          deleteBoxModalOpen:false,
 
     }
-    // this.updatePost = this.updatePost.bind(this)
-    // this.deletePost = this.deletePost.bind(this);
+
 
     
 }
@@ -81,7 +80,6 @@ export default  class AllPosts extends Component {
       title: posts.title,
       content: posts.content,
       category: posts.category,
-     // file: posts.file
     })
     }
     toggleModal1(posts){
@@ -123,7 +121,6 @@ export default  class AllPosts extends Component {
               'Open': false
             })
             
-            //  window.location='/mypost'
 
         })
 }
@@ -131,13 +128,11 @@ export default  class AllPosts extends Component {
 
 
     updatePost=(e)=>{
-      //let file = this.state.file
       let title = this.state.title
       let content = this.state.content
       let category = this.state.category
       let id = e.$oid
       let formdata = new FormData()
-     // formdata.append('file',file)
       formdata.append('id',id)
       formdata.append('category',category)
       formdata.append('title',title)
@@ -153,7 +148,6 @@ export default  class AllPosts extends Component {
         data: formdata
       }).then((response) => {
     
-        // console.log("updated new post!")
 
       this.getMyPost()
 
@@ -161,7 +155,6 @@ export default  class AllPosts extends Component {
 
         'modalIsOpen': false
       })
-      //window.location = '/mypost';
 
      });  
     }
@@ -184,7 +177,6 @@ export default  class AllPosts extends Component {
         'msg': response.data.msg,
         'deleteBoxModalOpen': false
       })
-        // window.location = '/mypost';
       });        
     } 
 
@@ -362,7 +354,7 @@ export default  class AllPosts extends Component {
                         <div className="form-group">
         <label htmlFor="category">Category</label>
                             <Input type="select" name="category" id="category" placeholder={this.state.category} onChange={e => {this.setState({'category': e.target.value})}}>
-                            <option value="Advance Web Technology"></option>
+                            <option value="" disabled selected>Choose Category</option>
                             <option value="Advance Web Technology">Advance Web Technology</option>
                             <option value="Peer to Peer">Peer to Peer</option>
                             <option value="Internet of Things">Internet of Things</option>
