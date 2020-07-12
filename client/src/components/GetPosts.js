@@ -211,7 +211,7 @@ plusLike = (e) => {
         if(!posts.length) return <div className='jumbotron mx-auto mt-3' style={{"width":"70%"}}> <h4 className='text-center'>There is currently no posts yet</h4> </div>
 
         return posts.map((posts,index) => (
-          <Col md={{ span: 3, offset: 1 }}   sm="12">
+          <Col lg={{ span: 3, offset: 1 }}   sm="12">
              
              <div className="jumbotron mt-5 mx-5 " 
              style={
@@ -225,8 +225,8 @@ plusLike = (e) => {
                   </div>
 
                   <div className="col-sm-7 d-flex">
-                    <a  style={{color:'#5c7d92',fontWeight:'bold'}} >{posts.username}<br/>                  
-                    <small className="text-muted mt-1 mx-0">{moment(posts.date.$date).format("DD/MMM/YYYY")}</small>
+                    <a  className="ml-md-3 " style={{color:'#5c7d92',fontWeight:'bold'}} >{posts.username}<br/>                  
+                    <small className="text-muted mt-1 mx-lg-0 ml-md-3 ">{moment(posts.date.$date).format("DD/MMM/YYYY")}</small>
                     </a>
                   <div className="col-sm-1 ml-3" >
                     <h6 className="ml-3" style={{"color": "darkgrey"}}>
@@ -328,7 +328,7 @@ plusLike = (e) => {
           <React.Fragment >
 
             <Container onClick={e=>{this.setState({ displaylikemsg : '',displaydislikemsg : ''})}}>
-             <Row className="mt-5 float-md-right ">
+             <Row className="mt-5 float-lg-right mx-auto">
                <div class="card" style={{"width": "18rem"}}>
                  <img class="card-img-top" src={'images/sidebar.jpg'} alt="Card image cap" />
                  <div class="card-body">
