@@ -278,18 +278,24 @@ def plusLike():
         # check if the user has liked before or not
         repeatedUser = posts.find_one({'_id': id})
         exist='false'
+        repeated='false'
         i = 0
         j = 0
 
         while i < len(repeatedUser['like']):
             if repeatedUser['like'][i]['user_id'] == the_user['_id']:
-                exist='true'
+                # exist='true'
+                repeated='true'
             i += 1
-        while j < len(repeatedUser['dislike']):
-            repeatedId=repeatedUser['dislike'][i]['user_id']
-            if repeatedId == the_user['_id']:
-                exist='true'
-            j += 1
+        if  repeated=='true':
+            posts.update({ '_id': id},{ '$pull': {'like':{"user_id":the_user['_id']}}})
+            return jsonify({'msg':'done!' })
+        else:
+            while j < len(repeatedUser['dislike']):
+                repeatedId=repeatedUser['dislike'][j]['user_id']
+                if repeatedId == the_user['_id']:
+                    exist='true'
+                j += 1
 
         if exist == 'false':
             posts.update({ '_id': id}, { '$push': {'like':{'$each': [ {"username":the_user['username'],"user_id":the_user['_id'] } ] }}} )
@@ -312,17 +318,25 @@ def plusDislike():
         repeatedUser = posts.find_one({'_id': id})
 
         exist='false'
+        repeated='false'
+
         i = 0
         j = 0
         while i < len(repeatedUser['dislike']):
             repeatedId=repeatedUser['dislike'][i]['user_id']
             if repeatedId == the_user['_id']:
-                exist='true'
+                # exist='true'
+                repeated='true'
             i += 1
-        while j < len(repeatedUser['like']):
-            if repeatedUser['like'][i]['user_id'] == the_user['_id']:
-                exist='true'
-            j += 1
+        if  repeated=='true':
+            posts.update({ '_id': id},{ '$pull': {'dislike':{"user_id":the_user['_id']}}})
+            return jsonify({'msg':'done!' })
+        else:
+            while j < len(repeatedUser['like']):
+                if repeatedUser['like'][j]['user_id'] == the_user['_id']:
+                    exist='true'
+                j += 1
+
 
         if exist == 'false':
             posts.update({ '_id': id}, { '$push': {'dislike':{'$each': [ {"username":the_user['username'],"user_id":the_user['_id'] } ] }}} )
