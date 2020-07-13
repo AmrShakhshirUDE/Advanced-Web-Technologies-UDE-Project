@@ -3,6 +3,7 @@ import Profile from './Profile'
 import Footer from './Footer'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
+import { UrlContext } from '../contexts/urlContext';
 
 
 
@@ -13,7 +14,8 @@ class Login extends Component {
             email: '',
             password: '',
             result:'',
-            errors:{}
+            errors:{},
+            'serverUrl': UrlContext._currentValue,
         }
 
         this.onChange = this.onChange.bind(this)
@@ -26,7 +28,7 @@ class Login extends Component {
     }
     login = user => {
         return axios
-            .post("users/login", {
+            .post(this.state.serverUrl +'users/login', {
                 email: user.email,
                 password: user.password
             })
