@@ -110,7 +110,7 @@ class Login extends Component {
                             </div>
                           
 
-                            <div className=" my-2" style={{color:'#E67E22'}}> {this.state.result}</div>
+                            <div className=" my-2" style={{color:'red'}}> {this.state.result}</div>
                             <button type="submit" className="btn btn-lg btn-primary btn-block">
                                 Log In
                             </button>
