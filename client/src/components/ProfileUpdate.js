@@ -189,7 +189,7 @@ export default class ProfileUpdate extends Component{
 
                             </td>
                             </tr>
-                            <div className=" my-2" style={{color:'#E67E22'}}> {this.state.msg}</div>
+                            <div className=" my-2" style={{color:'red'}}> {this.state.msg}</div>
 
 
                         </tbody>
