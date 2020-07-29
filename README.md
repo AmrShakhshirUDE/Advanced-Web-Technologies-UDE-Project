@@ -10,6 +10,9 @@ This project is designed to facilitate the study process for new students in Uni
 5. Interact on posts by adding comments, like, and dislike
 6. User can update or remove own posts
 
+# Try on Heroku
+[Material Land](https://flaskpro-advwebtech.herokuapp.com/)
+
 # Screenshots
 
 
@@ -69,6 +72,4 @@ npm start -- --reset-cache
 then repeat step number 6
 
 # Group members
-1. Amr Shakhshir
-2. Baohui Deng
-3. Tannaz Vahidi
+**Baohui Deng, Tannaz Vahidi, Amr Shakhshir**
