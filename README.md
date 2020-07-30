@@ -62,7 +62,7 @@ npm install
 npm start
 ```
 
-If `npm start` doesn't work, do the following:
+> If `npm start` doesn't work, do the following:
 ```
 npm install rimraf -g
 rimraf node_modules
