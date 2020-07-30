@@ -5,10 +5,10 @@ This project is designed to facilitate the study process for new students in Uni
 ## Users can do the following:
 1. Register & login
 2. Change username, password, and personal image
-3. Add posts that include; inquiries and advices
+3. Add posts such as; inquiries and advices
 4. Upload helpful files and materials (only pdf, zip, and images)
 5. Interact on posts by adding comments, like, and dislike
-6. User can update or remove own posts
+6. User can update his/her own posts (title, category, contents, and attachment) or remove them. 
 
 # Try on Heroku
 [Material Land](https://flaskpro-advwebtech.herokuapp.com/)
