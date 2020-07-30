@@ -63,7 +63,7 @@ npm install
 npm start
 ```
 
-7. if `npm start` doesn't work, do the following:
+If `npm start` doesn't work, do the following:
 ```
 npm install rimraf -g
 rimraf node_modules
@@ -72,4 +72,4 @@ npm start -- --reset-cache
 then repeat step number 6
 
 # Group members
-**Baohui Deng, Tannaz Vahidi, Amr Shakhshir**
+> **Baohui Deng, Tannaz Vahidi, Amr Shakhshir**
