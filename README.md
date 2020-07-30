@@ -16,12 +16,15 @@ This project is designed to facilitate the study process for new students in Uni
 
 # Screenshots
 >Logo
+
 ![logo](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/1.Logo.png)
 
 >Landing page
+
 ![LandingPage](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/2.LandingPage.png)
 
 >Footer
+
 ![Footer](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/3.Footer.png)
 
 
