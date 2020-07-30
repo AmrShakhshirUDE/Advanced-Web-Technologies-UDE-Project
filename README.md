@@ -99,7 +99,7 @@ on line41 make sure that proxy value is: `"http://127.0.0.1:5000/"`
 4. Seperate 'client' folder from project folder to be deployed seperately
 
 
-5. follow the guide [Deploy web app to Heroku] (https://www.youtube.com/playlist?list=PLpSK06odCvYdSyGkWmc-AdqRc3zmiHPCc)
+5. follow the guide [Deploy web app to Heroku](https://www.youtube.com/playlist?list=PLpSK06odCvYdSyGkWmc-AdqRc3zmiHPCc)
 
 # Group members
 > **Baohui Deng, Tannaz Vahidi, Amr Shakhshir**
