@@ -35,7 +35,6 @@ then uncomment line16
 
 3. Open terminal and go to the path of *mongo.py* then type the following:
 ```
-python3 -m venv venv
 venv\scripts\activate
 pip install -r requirements.txt
 python mongo.py
