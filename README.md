@@ -23,7 +23,7 @@ This project is designed to facilitate the study process for new students in Uni
 # How to run the project
 ## To run locally
 1. Make sure that you have mongoDB installed on your PC
-2. In the top level directory, go to *mongo.py* file
+2. In the top level directory, go to `*mongo.py*` file
 
 comment line15
 
@@ -42,7 +42,7 @@ python mongo.py
 ```
 The backend part should be running
 
-4. Go to *client\src\contexts\urlContext.js*
+4. Go to `*client\src\contexts\urlContext.js*`
 
 comment line3
 
@@ -52,7 +52,7 @@ uncomment line4
 
 `export const UrlContext = createContext("http://localhost:3000/");`
 
-5. Go to *client\package.json*
+5. Go to `*client\package.json*`
 
 on line41 make sure that proxy value is: `"http://127.0.0.1:5000/"`
 
