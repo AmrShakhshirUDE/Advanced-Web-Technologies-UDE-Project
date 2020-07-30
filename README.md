@@ -15,29 +15,39 @@ This project is designed to facilitate the study process for new students in Uni
 [Material Land](https://flaskpro-advwebtech.herokuapp.com/)
 
 # Screenshots
-Logo
-![logo](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/1.Logo.png)
-Landing page
-![LandingPage](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/2.LandingPage.png)
-Footer
-![Footer](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/3.Footer.png)
-Register
-![Register](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/4.Register.png)
-Login
-![Login](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/5.LoginPage.png)
-Profile page
-![ProfilePage](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/6.UserPage.png)
-Updata personal data
-![Updata personal data](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/7.Change-update%20userData.png)
-Add post
-![AddPost](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/8.AddPost.png)
-Show post
-![ShowPost](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/9.ShowPosts.png)
-Own posts
-![OwnPosts](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/10.Review%20own%20posts.png)
-Modify posts
-![ModifyPosts](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/11.Update-%20remove%20own%20posts.png)
 
+![logo](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/1.Logo.png)
+>Logo
+
+![LandingPage](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/2.LandingPage.png)
+>Landing page
+
+![Footer](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/3.Footer.png)
+>Footer
+
+![Register](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/4.Register.png)
+>Register
+
+![Login](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/5.LoginPage.png)
+>Login
+
+![ProfilePage](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/6.UserPage.png)
+>Profile page
+
+![Updata personal data](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/7.Change-update%20userData.png)
+>Updata personal data
+
+![AddPost](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/8.AddPost.png)
+>Add post
+
+![ShowPost](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/9.ShowPosts.png)
+>Show post
+
+![OwnPosts](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/10.Review%20own%20posts.png)
+>Own posts
+
+![ModifyPosts](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/11.Update-%20remove%20own%20posts.png)
+> Modify posts
 
 # Technical architecture
 The application consists of two main parts:
