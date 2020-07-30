@@ -44,11 +44,11 @@ The application consists of two main parts:
 ## To run locally
 1. In the top level directory, go to `mongo.py` file
 
-comment line15
+comment line.15
 
 `app.config["MONGO_URI"] = os.environ.get("MONGODB_URI")`
 
-then uncomment line16
+then uncomment line.16
 
 `app.config["MONGO_URI"] = "mongodb://localhost:27017/final"`
 
@@ -62,17 +62,17 @@ The backend part should be running
 
 3. Go to `client\src\contexts\urlContext.js`
 
-comment line3
+comment line.3
 
 `export const UrlContext = createContext("https://first-attempt-advwebtech-ude.herokuapp.com/");`
 
-uncomment line4
+uncomment line.4
 
 `export const UrlContext = createContext("http://localhost:3000/");`
 
 4. Go to `client\package.json`
 
-on line41 make sure that proxy value is: `"http://127.0.0.1:5000/"`
+on line.41 make sure that proxy value is: `"http://127.0.0.1:5000/"`
 
 5. Open a new terminal and go to the path of client folder
 
@@ -92,21 +92,21 @@ then repeat step number 5
 ## To deploy
 1. In the top level directory, go to `mongo.py` file
 
-comment line16
+comment line.16
 
 `app.config["MONGO_URI"] = "mongodb://localhost:27017/final"`
 
-then uncomment line15
+then uncomment line.15
 
 `app.config["MONGO_URI"] = os.environ.get("MONGODB_URI")`
 
 2. Go to `client\src\contexts\urlContext.js`
 
-uncomment line3
+uncomment line.3
 
 `export const UrlContext = createContext("https://first-attempt-advwebtech-ude.herokuapp.com/");`
 
-comment line4
+comment line.4
 
 `export const UrlContext = createContext("http://localhost:3000/");`
 
