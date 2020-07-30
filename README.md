@@ -17,8 +17,25 @@ This project is designed to facilitate the study process for new students in Uni
 
 
 # Technical architecture
+The application consists of two main parts:
+* Backend: responsible for server-side web application logic, consists of a server, an application, and a database.
+* Frontend: the part that users interact with it.
 
 # Technologies/ libraries used
+## Backend technologies
+* Flask
+* MongoDB for database
+## Frontend technologies
+* React
+* Bootstrap
+## Connecting frontend to backend
+* Axios
+* Postman: to test connectivity especially for 'POST' method
+## Deploy technologies
+* Gunicorn as a web server gateway interface "WSGI"
+* mLab as a cloud database service
+* Github
+* Heroku
 
 # How to run the project
 > Make sure that you have mongoDB installed on your PC and we highly recommend you to use visual studio code as a code editor
