@@ -16,6 +16,16 @@ This project is designed to facilitate the study process for new students in Uni
 
 # Screenshots
 ![logo](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/1.Logo.png)
+![LandingPage](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/2.LandingPage.png)
+![Footer](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/3.Footer.png)
+![Register](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/4.Register.png)
+![Login](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/5.LoginPage.png)
+![ProfilePage](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/6.UserPage.png)
+![Updata personal data](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/7.Change-update%20userData.png)
+![AddPost](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/8.AddPost.png)
+![ShowPost](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/9.ShowPosts.png)
+![OwnPosts](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/10.Review%20own%20posts.png)
+![modify posts](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/11.Update-%20remove%20own%20posts.png)
 
 
 # Technical architecture
