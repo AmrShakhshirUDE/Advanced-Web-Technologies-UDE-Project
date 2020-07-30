@@ -27,30 +27,38 @@ This project is designed to facilitate the study process for new students in Uni
 
 ![Footer](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/3.Footer.png)
 
-
-![Register](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/4.Register.png)
 >Register page
 
-![Login](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/5.LoginPage.png)
+![Register](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/4.Register.png)
+
 >Login page
 
-![ProfilePage](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/6.UserPage.png)
+![Login](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/5.LoginPage.png)
+
 >Profile page
 
-![Updata personal data](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/7.Change-update%20userData.png)
+![ProfilePage](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/6.UserPage.png)
+
 >Updata personal data
 
-![AddPost](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/8.AddPost.png)
+![Updata personal data](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/7.Change-update%20userData.png)
+
 >Add post
 
-![ShowPost](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/9.ShowPosts.png)
+![AddPost](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/8.AddPost.png)
+
 >Show post
 
-![OwnPosts](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/10.Review%20own%20posts.png)
+![ShowPost](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/9.ShowPosts.png)
+
 >Own posts
 
-![ModifyPosts](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/11.Update-%20remove%20own%20posts.png)
+![OwnPosts](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/10.Review%20own%20posts.png)
+
 > Modify posts
+
+![ModifyPosts](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/11.Update-%20remove%20own%20posts.png)
+
 
 # Technical architecture
 The application consists of two main parts:
