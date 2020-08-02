@@ -17,6 +17,9 @@ This project is designed to facilitate the study process for new students in Uni
 # Live Demo
 [Live demo and screenshots](https://www.youtube.com/watch?v=M09m9P4qvKg)
 
+# Advertisement
+[Advertisement Video](https://biteable.com/watch/educational-copy-2652764)
+
 # Screenshots
 >Logo
 
