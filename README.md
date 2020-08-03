@@ -2,6 +2,9 @@
 This project is designed to facilitate the study process for new students in University of Duisburg-Essen by sharing experience, advices, and helpful files among students.
 > Project for the course: Advanced web technologies, International studies in engineering, Master of computer engineering, University of Duisburg-Essen
 
+# A project logo/teaser image showcasing your project that is suitable for a medium-sized thumbnail image for the course web page
+![logo/teaser]
+
 # Features
 ## Users can do the following:
 1. Register & login
