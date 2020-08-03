@@ -3,7 +3,7 @@ This project is designed to facilitate the study process for new students in Uni
 > Project for the course: Advanced web technologies, International studies in engineering, Master of computer engineering, University of Duisburg-Essen
 
 # A project logo/teaser image showcasing your project that is suitable for a medium-sized thumbnail image for the course web page
-![logo/teaser]
+![logo/teaser](https://github.com/AmrShakhshirUDE/testdeployUDE/blob/master/ProjectImages/logo-teaser.jpeg)
 
 # Features
 ## Users can do the following:
