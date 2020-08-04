@@ -171,7 +171,7 @@ comment line.4
 * Create an account on mLab, currently migrated to mongoDB Atlas, make sure to name database and collection as written in the code, and finally connect backend app to mLab as explained in the upmentioned guide
 * Push client file to a new github repository and deploy it to heroku. Please follow the steps in the upmentioned guide and __note that here you don't need to change url in axios part as you did that on step number 2__
 
-5. On file `package.json` make sure that proxy value is equal to the url of the deployed frontend app on heroku
+5. On file `package.json` make sure that proxy value is equal to the url of the deployed backend app on heroku
 
 # Group members
 > **Baohui Deng, Tannaz Vahidi, Amr Shakhshir**
